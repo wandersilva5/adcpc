@@ -14,25 +14,32 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                {{-- <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span> --}}
+              </a>
+            </li>
+           
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Entradas</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="{{ route('dizimos.index') }}">
+                    <i class="fa fa-circle-o"></i> Dízimos e Ofertas
+                  </a>
+                </li>
+              </ul>
             </li>
-           
-            <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                <span class="pull-right-container">
-                  <small class="label pull-right bg-red">3</small>
-                  <small class="label pull-right bg-blue">17</small>
-                </span>
-              </a>
-            </li>
-            <li>
+            
+            {{-- <li>
               <a href="#">
                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
                 <span class="pull-right-container">
@@ -85,7 +92,7 @@
                 </li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
               </ul>
-            </li>
+            </li> --}}
             <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
             <li class="header">CONFIGURAÇÕES</li>
           </ul>
