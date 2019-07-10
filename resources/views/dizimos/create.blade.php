@@ -24,8 +24,7 @@ Lançamentos
             @csrf
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Tipo Oferta', 'for_name'=>'descricao', 'class'=>'form-control','col'=>'9'])
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control','col'=>'3'])
-
-            
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control','col'=>'3'])
     </div>
         <!-- /.box-body -->
     <div class="box-footer">

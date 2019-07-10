@@ -14,9 +14,10 @@ class DizimosController extends Controller
         return view('dizimos.index', compact('dizimos'));
     }
 
-    public function create()
+    public function create(Dizimos $dizimos)
     {
-        //
+        $dizimos = $dizimos->all();
+        return view('dizimos.index', compact('dizimos'));
     }
 
     public function store(Request $request)
