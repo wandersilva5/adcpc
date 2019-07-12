@@ -37,6 +37,7 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
 
+  @stack('styles')
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -51,6 +52,7 @@
         <div class="wrapper">
             @include('layouts.topo')
             @include('layouts.menu-esquerdo')
+            
             @include('layouts.corpo')
             @include('layouts.rodape')
         </div>
@@ -97,5 +99,6 @@
         <script src="{{ asset('js/pages/dashboard.js') }}"></script>
         <!-- AdminLTE for demo purposes -->
         {{-- <script src="js/demo.js"></script> --}}
+        @stack('scripts')
     </body>
 </html>

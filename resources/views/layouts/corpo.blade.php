@@ -1,5 +1,5 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) --> @include('alert')
     <section class="content-header">
         <h1>@yield('titulo-pag')<small> @yield('sub-titulo') </small></h1>
         <ol class="breadcrumb">

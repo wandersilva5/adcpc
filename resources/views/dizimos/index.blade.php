@@ -19,34 +19,42 @@ Lançamentos
     </div>
     <div class="box-body">
             <form action="{{ route('dizimos.store') }}" method="POST" >
-            @csrf
-            @include('layouts.formulario.select', ['type'=>'text','label'=>'Tipo Oferta', 'for_name'=>'descricao[]', 'col'=>'9'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor[]', 'class'=>'form-control','col'=>'3'])
-            @include('layouts.formulario.select', ['type'=>'text','label'=>'Nome do Dizimista', 'for_name'=>'descricao[]', 'col'=>'9'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor[]', 'class'=>'form-control','col'=>'3'])
+                @csrf
+                @include('layouts.formulario.select', ['type'=>'text','label'=>'Tipo Oferta', 'for_name'=>'descricao', 'lista'=>$lista,'col'=>'9'])
+                @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control decimais','col'=>'3'])
+                
+            </form>
+            <form action="{{ route('dizimos.store') }}" method="post">
+                @csrf
+                @include('layouts.formulario.select', ['type'=>'text','label'=>'Nome do Dizimista', 'for_name'=>'descricao', 'lista'=>$list_user,'col'=>'9'])
+                @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control decimais','col'=>'3'])
+                
+            </form>
         <!-- /.box-body -->
         <div class="box-footer">
-            <button type="submit" class="btn btn-success btn-submit">
-                <i class="fa fa-lg fa-save"></i> 
-                <span> SALVAR</span> 
-            </button>
+           
         </div>
         <hr>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <td style="width: 65%">Descrição</td>
+                    <td style="width: 90%">Descrição</td>
                     <td style="width: 20%">Valor R$</td>
-                    <td style="width: 15%">Ação</td>
+                    <td style="width: 10%">Ação</td>
                 </tr>
             </thead>
             <tbody>
-                @foreach($dizimos as $list)
+                @foreach($list_dizimos as $list)
                 <tr>
-                    <td>{{ $list->descrcao }}</td>
+                    <td>{{ $list->descricao }}</td>
                     <td>{{ $list->valor }}</td>
                     <td>
-                        @include('layouts.formulario.links_acao', ['control'=>'agenda'])
+                        <form action="{{ route( "dizimos.destroy", $list->id) }}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger btn-social-icon">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
@@ -59,3 +67,7 @@ Lançamentos
 </div>
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/jquery.mask.js') }}"></script>     
+@endpush
