@@ -1,14 +1,12 @@
-<table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+<table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
-            <td>Nome</td>
-            <td>Username</td>
-            <td>CPF</td>
-            <td>Celular</td>
-            <td>E-mail</td>
-            <td>Permissão</td>
-            <td>Status</td>
-            <td>Ação</td>
+            <td><b>Nome</b></td>
+            <td><b>Login</b></td>
+            <td><b>CPF</b></td>
+            <td><b>Celular</b></td>
+            <td><b>Permissão</b></td>
+            <td style="width: 20%; text-align: center"><b>Ação</b></td>
         </tr>
     </thead>
     <tbody>
@@ -18,15 +16,7 @@
             <td>{{ $list->listname }}</td>
             <td>{{ $list->cpf }}</td>
             <td>{{ $list->phone }}</td>
-            <td>{{ $list->email }}</td>
             <td>{{ $list->permission }}</td>
-            <td>
-                @if($list->fl_ativo == 'ativo')
-                <span class="badge bg-green">{{ $list->fl_ativo }}</span>
-                @else
-                <span class="badge bg-warning">{{ $list->fl_ativo }}</span>
-                @endif
-            </td>
             <td>
                 @include('layouts.formulario.links_acao', ['control'=>'users'])
             </td>

@@ -15,10 +15,10 @@ Route::group(['middleware'=>['auth']], function (){
         Route::get('{id}/show', 'UsersController@show')->name('users.show');
         Route::get('create', 'UsersController@create')->name('users.create');
         Route::post('store', 'UsersController@store')->name('users.store');
-        Route::any('{id}/edit', 'UsersController@edit')->name('users.edit');
-        Route::any('{id}/update', 'UsersController@update')->name('users.update');
+        Route::post('{id}/edit', 'UsersController@edit')->name('users.edit');
+        Route::post('{id}/update', 'UsersController@update')->name('users.update');
         Route::get('perfil', 'UsersController@perfil')->name('users.perfil');
-        Route::any('{id}/update-perfil', 'UsersController@updatePerfil')->name('users.update-perfil');
+        Route::post('{id}/update-perfil', 'UsersController@updatePerfil')->name('users.update-perfil');
         Route::post('destroy', 'UsersController@destroy')->name('users.destroy');
     });
 

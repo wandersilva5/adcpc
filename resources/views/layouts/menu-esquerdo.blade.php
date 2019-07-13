@@ -93,8 +93,20 @@
                 <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
               </ul>
             </li> --}}
-            <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <li><a href="#"><i class="fa fa-book"></i> <span>Documentação</span></a></li>
             <li class="header">CONFIGURAÇÕES</li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i> <span> Usuários</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i> Lista de Usuários</a></li>
+              </ul>
+            </li>
+
           </ul>
         </section>
         <!-- /.sidebar -->
