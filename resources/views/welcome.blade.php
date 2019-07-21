@@ -27,16 +27,13 @@
     </head>
     <body class="hold-transition login-page">
         <div class="content">
-            <div class="text-left">
-                <img src="{{ asset('img/photo1.png') }}" width="800" alt="">
-            </div>
             <div class="text-right">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group has-feedback">
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="username" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                        @error('email')
+                        @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

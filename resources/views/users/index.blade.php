@@ -3,7 +3,7 @@
 @section('titulo-pag')
 Usuários
 @section('sub-titulo')
-Lista de Usuários
+Gestão de Acessos
 @endsection
 @endsection
 
@@ -11,20 +11,18 @@ Lista de Usuários
 
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">Usuários ativos</h3>
+        <h3 class="box-title">Lista de usuários</h3>
 
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                 <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
         </div>
     </div>
     <div class="box-body">
         <div class="col-md-12">
             <a class="btn btn-primary waves-effect" href="{{ route('users.create') }}">
                 <i class="fa fa-plus-circle"></i>
-                <span> CADASTRAR PEDIDO</span>
+                <span> CADASTRAR USUÁRIOS</span>
             </a>
         </div>
         <div class="col-md-12">

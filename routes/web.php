@@ -23,14 +23,15 @@ Route::group(['middleware'=>['auth']], function (){
     });
 
     Route::group(['prefix' => 'ata'], function () {
-        Route::get('/', 'AtaController@index')->name('ata.index');
-        Route::get('index', 'AtaController@index')->name('ata.index');
-        Route::get('{id}/show', 'AtaController@show')->name('ata.show');
-        Route::get('create', 'AtaController@create')->name('ata.create');
-        Route::post('store', 'AtaController@store')->name('ata.store');
-        Route::get('{id}/edit', 'AtaController@edit')->name('ata.edit');
-        Route::post('{id}/update', 'AtaController@update')->name('ata.update');
-        Route::post('{id}/destroy', 'AtaController@destroy')->name('ata.destroy');
+        Route::resource('/', 'AtaController@index');
+        // Route::get('/', 'AtaController@index')->name('ata.index');
+        // Route::get('index', 'AtaController@index')->name('ata.index');
+        // Route::get('{id}/show', 'AtaController@show')->name('ata.show');
+        // Route::get('create', 'AtaController@create')->name('ata.create');
+        // Route::post('store', 'AtaController@store')->name('ata.store');
+        // Route::get('{id}/edit', 'AtaController@edit')->name('ata.edit');
+        // Route::post('{id}/update', 'AtaController@update')->name('ata.update');
+        // Route::post('{id}/destroy', 'AtaController@destroy')->name('ata.destroy');
         Route::post('/mult-upload', 'AtaController@multUpload')->name('ata.mult-upload');
     });
 
