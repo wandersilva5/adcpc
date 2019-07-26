@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Role;
 use App\Permission;
 
-class RolesController extends Controller
+class PermissionsController extends Controller
 {
     protected $role;
     protected $permission;
@@ -21,14 +21,12 @@ class RolesController extends Controller
 
     public function index()
     {
-        $roles = $this->role->all();
-        return view('roles.index', compact('roles'));
+        //
     }
 
     public function create()
     {
-        $permissions = $this->permission->all();
-        return view('roles.create', compact('permissions'));
+        //
     }
 
     public function store(Request $request)
@@ -43,10 +41,7 @@ class RolesController extends Controller
 
     public function edit($id)
     {
-        $permissions = $this->permission->all();
-        $roles = $this->role->where('id', $id)->get();
-        dd();
-        return view('roles.edit', compact('permissions', 'roles'));
+        //
     }
 
     public function update(Request $request, $id)

@@ -46,4 +46,16 @@ Route::group(['middleware'=>['auth']], function (){
         Route::post('{id}/destroy', 'DizimosController@destroy')->name('dizimos.destroy');
         Route::post('/mult-upload', 'DizimosController@multUpload')->name('dizimos.mult-upload');
     });
+
+    Route::group(['prefix' => 'roles'], function () {
+        Route::get('/', 'RolesController@index')->name('roles.index');
+        Route::get('index', 'RolesController@index')->name('roles.index');
+        Route::get('{id}/show', 'RolesController@show')->name('roles.show');
+        Route::get('create', 'RolesController@create')->name('roles.create');
+        Route::post('store', 'RolesController@store')->name('roles.store');
+        Route::get('{id}/edit', 'RolesController@edit')->name('roles.edit');
+        Route::post('{id}/update', 'RolesController@update')->name('roles.update');
+        Route::post('{id}/destroy', 'RolesController@destroy')->name('roles.destroy');
+        Route::get('{id}/buscaCidade', 'RolesController@buscaCidade');
+    });
 });
