@@ -24,8 +24,9 @@ Cadastro de um Novo Usuário <i class="fa fa-arrow-down"></i>
             
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Nome Completo', 'for_name'=>'name', 'class'=>'form-control','col'=>'6'])
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Login', 'for_name'=>'username', 'class'=>'form-control cpf','col'=>'4'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'email', 'class'=>'form-control','col'=>'4'])
-            @include('layouts.formulario.input', ['type'=>'password','label'=>'Senha', 'for_name'=>'password', 'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'celular', 'class'=>'form-control','col'=>'2'])
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'E-mail', 'for_name'=>'email', 'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Senha', 'class'=>'form-control','col'=>'4','value'=> 'Padrão'])
             <br>
             <br>
             <div class="col-md-12">

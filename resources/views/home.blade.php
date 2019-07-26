@@ -55,7 +55,7 @@ Control panel
             <!-- small box -->
           <div class="small-box bg-fuchsia">
               <div class="inner">
-                  <h3>150</h3>
+                <h3>{{ $countDizimo ?? '' }}</h3>
   
                   <p>Meu Dízimo</p>
               </div>

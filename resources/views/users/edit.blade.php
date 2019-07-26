@@ -12,7 +12,8 @@
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Nome Completo', 'for_name'=>'name','value'=> $users->name, 'class'=>'form-control','col'=>'6', 'icon'=>'person'])
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Username', 'for_name'=>'username','value'=> $users->username, 'class'=>'form-control','col'=>'4', 'icon'=>'perm_identity'])
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'E-mail', 'for_name'=>'email','value'=> $users->email, 'class'=>'form-control','col'=>'4', 'icon'=>'@'])
-            @include('layouts.formulario.input', ['type'=>'password', 'label'=>'Senha', 'for_name'=>'password', 'class'=>'form-control','col'=>'4', 'icon'=>'vpn_key'])
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'celular', 'value'=> $users->celular,'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.input', ['type'=>'password', 'label'=>'Senha', 'for_name'=>'password', 'class'=>'form-control','col'=>'4'])
         <br>
         <br>
         <div class='input-wrapper'>

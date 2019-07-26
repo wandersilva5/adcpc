@@ -70,9 +70,9 @@ class UsersController extends Controller
         
     }
     
-    public function perfil()
+    public function perfil($id)
     {
-        $users = $this->user->where('id','=', Auth::user()->id)->get();
+        $users = $this->user->where('id','=', $id)->get();
         
         return view('users.perfil', compact('users'));
         
