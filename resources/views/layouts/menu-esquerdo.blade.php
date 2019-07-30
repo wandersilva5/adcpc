@@ -104,6 +104,8 @@
               </a>
               <ul class="treeview-menu">
               <li><a href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i> Lista de Usuários</a></li>
+              <li><a href="{{ route('roles.index') }}"><i class="fa fa-circle-o"></i> Lista de Perfis</a></li>
+              <li><a href="{{ route('permissions.index') }}"><i class="fa fa-circle-o"></i> Lista de Permissões</a></li>
               </ul>
             </li>
 

@@ -58,4 +58,16 @@ Route::group(['middleware'=>['auth']], function (){
         Route::post('{id}/destroy', 'RolesController@destroy')->name('roles.destroy');
         Route::get('{id}/buscaCidade', 'RolesController@buscaCidade');
     });
+    
+    Route::group(['prefix' => 'permissions'], function () {
+        Route::get('/', 'PermissionsController@index')->name('permissions.index');
+        Route::get('index', 'PermissionsController@index')->name('permissions.index');
+        Route::get('{id}/show', 'PermissionsController@show')->name('permissions.show');
+        Route::get('create', 'PermissionsController@create')->name('permissions.create');
+        Route::post('store', 'PermissionsController@store')->name('permissions.store');
+        Route::get('{id}/edit', 'PermissionsController@edit')->name('permissions.edit');
+        Route::post('{id}/update', 'PermissionsController@update')->name('permissions.update');
+        Route::post('{id}/destroy', 'PermissionsController@destroy')->name('permissions.destroy');
+        Route::get('{id}/buscaCidade', 'PermissionsController@buscaCidade');
+    });
 });

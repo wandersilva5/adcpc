@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center tools">
     <form action="{{ route( "$control.destroy", $list->id) }}" method="POST">
         @csrf
         <a href="{{ route("$control.show", $list->id) }}" class="btn btn-success btn-social-icon">

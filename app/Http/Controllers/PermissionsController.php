@@ -21,17 +21,25 @@ class PermissionsController extends Controller
 
     public function index()
     {
-        //
+        $permissions = $this->role->all();
+        return view('permissions.index', compact('permissions'));
     }
 
     public function create()
     {
-        //
+        return view('permissions.create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $data = $this->request->except('_token');
+
+        $inserir = $this->permission->create($data);
+        if($inserir){
+            return redirect()->route('permissions.create')->with('success', 'Salvo com sucesso! Mais uma permissão cadastrado!');
+        }else{
+            return redirect()->back()->with('error', 'Aconteceu um erro! Tente novamente, caso o erro persistir, informe o administrador.');
+        }
     }
 
     public function show($id)
