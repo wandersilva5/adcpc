@@ -12,15 +12,11 @@ class DizimosController extends Controller
     public function index(Dizimos $dizimos, User $user)
     {
         $list_dizimos = $dizimos->orderBy('id', 'DESC')->get();
-        $list_user = $user->select('name')->pluck('name');
+        $list_user = $user->pluck('name', 'id');
         $lista = $dizimos->tipoOferta;
         return view('dizimos.index', compact('list_dizimos', 'lista', 'list_user'));
     }
 
-    public function create(Dizimos $dizimos)
-    {
-        
-    }
 
     public function store(Request $request, Dizimos $dizimos)
     {
@@ -33,20 +29,6 @@ class DizimosController extends Controller
         }
     }
 
-    public function show(Dizimos $dizimos)
-    {
-        //
-    }
-
-    public function edit(Dizimos $dizimos)
-    {
-        //
-    }
-
-    public function update(Request $request, Dizimos $dizimos)
-    {
-        //
-    }
 
     public function destroy($id)
     {
