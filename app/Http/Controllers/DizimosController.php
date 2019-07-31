@@ -11,7 +11,8 @@ class DizimosController extends Controller
 
     public function index(Dizimos $dizimos, User $user)
     {
-        $list_dizimos = $dizimos->orderBy('id', 'DESC')->get();
+        $list_dizimos = $dizimos->where('created_at','<' ,'CURDATE()')->orderBy('id', 'DESC')->get();
+        // dd($list_dizimos);
         $list_user = $user->pluck('name', 'id');
         $lista = $dizimos->tipoOferta;
         return view('dizimos.index', compact('list_dizimos', 'lista', 'list_user'));

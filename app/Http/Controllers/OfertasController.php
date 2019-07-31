@@ -11,7 +11,7 @@ class OfertasController extends Controller
 
     public function index(Ofertas $ofertas, User $user)
     {
-        $list_ofertas = $ofertas->orderBy('id', 'DESC')->get();
+        $list_ofertas = $ofertas->where('created_at','<' ,'CURDATE()')->orderBy('id', 'DESC')->get();
         $lista = $ofertas->tipoOferta;
         return view('ofertas.index', compact('list_ofertas' ,'lista'));
     }
