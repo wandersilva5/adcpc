@@ -8,7 +8,7 @@ class Dizimos extends Model
 {
 
     protected $fillable = [
-        'descricao', 'valor',
+        'descricao', 'valor', 'user_id',
     ];
 
 }

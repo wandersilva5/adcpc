@@ -23,7 +23,7 @@ class DizimosController extends Controller
         $data = $request->all();
         $salvar = $dizimos->create($data);
         if($salvar){
-            return redirect()->route('dizimos.index')->with('success', 'Oferta ou Dízimo salvo com sucesso!!');
+            return redirect()->route('dizimos.index')->with('success', 'Dízimo salvo com sucesso!!');
         }else{
             return redirect()->back()->with('error', 'Aconteceu um erro! Tente novamente, caso o erro persistir, informe o administrador.');
         }
@@ -34,7 +34,7 @@ class DizimosController extends Controller
     {
         $destroy = Dizimos::where('id', $id)->delete();
         if($destroy){
-            return redirect()->route('dizimos.index', $id)->with('success', 'Oferta ou Dízimo deletado com sucesso!!');
+            return redirect()->route('dizimos.index', $id)->with('success', 'Dízimo deletado com sucesso!!');
         }else{
             return redirect()->back()->with('error', 'Aconteceu um erro! Tente novamente, caso o erro persistir, informe o administrador.');
         }

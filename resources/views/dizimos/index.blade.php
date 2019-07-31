@@ -38,7 +38,7 @@ Lançamentos
                 <tbody>
                     @foreach($list_dizimos as $list)
                     <tr>
-                        <td>{{ $list->descricao }}</td>
+                        <td>{{ $list_user[$list->descricao] }}</td>
                         <td>{{ $list->valor }}</td>
                         <td>
                             <form action="{{ route( "dizimos.destroy", $list->id) }}" method="POST">
