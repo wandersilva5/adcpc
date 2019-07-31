@@ -33,7 +33,12 @@
               <ul class="treeview-menu">
                 <li>
                   <a href="{{ route('dizimos.index') }}">
-                    <i class="fa fa-circle-o"></i> Dízimos e Ofertas
+                    <i class="fa fa-circle-o"></i> Dízimos
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('ofertas.index') }}">
+                    <i class="fa fa-circle-o"></i> Ofertas
                   </a>
                 </li>
               </ul>
