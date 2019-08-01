@@ -29,19 +29,20 @@ class UsersController extends Controller
 
     public function store()
     {
-        $data = $this->request->all();
+        $data = $this->request->except('_token');
+        $data['password'] = bcrypt('adcpc@123');
         
         if ($this->request->hasFile('foto')) {
             
             $imagem = $data['foto'];
-            $nameImage = uniqid(date('HisYmd'));
+            $nameImage = uniqid(date('His'));
             
             $extencao = $this->request->foto->extension($imagem);
             $namefoto = "{$nameImage}.{$extencao}";
             
             $data['foto'] = $namefoto;
             $teste = $this->request->foto->storeAs('users', $namefoto);
-            
+
         }elseif($this->request->foto == NULL){
             unset($data['foto']);
         }else{
@@ -91,7 +92,7 @@ class UsersController extends Controller
         if ($this->request->hasFile('foto')) {
             
             $imagem = $data['foto'];
-            $nameImage = uniqid(date('HisYmd'));
+            $nameImage = uniqid(date('His'));
             
             $extencao = $this->request->foto->extension($imagem);
             $namefoto = "{$nameImage}.{$extencao}";
@@ -122,6 +123,23 @@ class UsersController extends Controller
                 $data['password'] = bcrypt($data['password']);
             }else{
                 unset($data['password']);
+            }
+
+            if ($this->request->hasFile('foto')) {
+            
+                $imagem = $data['foto'];
+                $nameImage = uniqid(date('His'));
+                
+                $extencao = $this->request->foto->extension($imagem);
+                $namefoto = "{$nameImage}.{$extencao}";
+                
+                $data['foto'] = $namefoto;
+                $teste = $this->request->foto->storeAs('users', $namefoto);
+                
+            }elseif($this->request->foto == NULL){
+                unset($data['foto']);
+            }else{
+                return redirect()->route('users.edit')->with('info', 'Aconteceu um erro! Houve algum problema com sua imagem.');
             }
             
             $update = User::where('id', $id)->update($data);

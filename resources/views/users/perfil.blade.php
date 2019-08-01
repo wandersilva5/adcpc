@@ -21,11 +21,15 @@ Alterar dados do meu perfil
     <div class="box-body">
         <form action="{{ url('users/'.Auth::user()->id.'/update') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="col-md-12">
+                {{-- <img src="{{ asset('') }}" alt=""> --}}
+            </div>
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Nome Completo', 'for_name'=>'name','value'=> Auth::user()->name, 'class'=>'form-control','col'=>'6', 'disabled'=>'disabled'])
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Username', 'for_name'=>'username','value'=> Auth::user()->username, 'class'=>'form-control','col'=>'4', 'disabled'=>'disabled'])
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'celular', 'value'=> Auth::user()->celular,'class'=>'form-control','col'=>'2', 'disabled'=>'disabled'])
             @include('layouts.formulario.input', ['type'=>'text', 'label'=>'E-mail', 'for_name'=>'email','value'=> Auth::user()->email, 'class'=>'form-control','col'=>'4', 'disabled'=>'disabled'])
             @include('layouts.formulario.input', ['type'=>'password', 'label'=>'Senha', 'for_name'=>'password', 'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Perfil', 'for_name'=>'permission_id','value'=> Auth::user()->permission_id, 'class'=>'form-control','col'=>'4'])
             <div class="col-md-12">
                 @include('layouts.formulario.footer', ['link'=>'users.index'])
             </div>

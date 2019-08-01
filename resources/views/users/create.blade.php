@@ -23,19 +23,19 @@ Cadastro de um Novo Usuário <i class="fa fa-arrow-down"></i>
             @csrf
             
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Nome Completo', 'for_name'=>'name', 'class'=>'form-control','col'=>'6'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'Login', 'for_name'=>'username', 'class'=>'form-control cpf','col'=>'4'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'celular', 'class'=>'form-control','col'=>'2'])
-            @include('layouts.formulario.input', ['type'=>'text','label'=>'E-mail', 'for_name'=>'email', 'class'=>'form-control','col'=>'4'])
-            @include('layouts.formulario.input', ['type'=>'text', 'label'=>'Senha', 'class'=>'form-control','col'=>'4','value'=> 'Padrão'])
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'Login', 'for_name'=>'username', 'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.input', ['type'=>'text','label'=>'Celular', 'for_name'=>'celular', 'class'=>'form-control telefones','col'=>'2'])
+            @include('layouts.formulario.input', ['type'=>'email','label'=>'E-mail', 'for_name'=>'email', 'class'=>'form-control','col'=>'4'])
+            @include('layouts.formulario.select', ['label'=>'Senha', 'for_name'=>'permission_id','class'=>'form-control','col'=>'4'])
             <br>
             <br>
             <div class="col-md-12">
-            <label for='input-file' class="btn btn-lg btn-primary">
-                <i class="fa fa-download"></i>
-                SELECIONE UMA FOTO
-            </label>
-            <input id='input-file' name="foto" type='file' onchange="readURL(this);" />
-            <span id='file-name'></span>
+                <label for='input-file' class="btn btn-lg btn-primary">
+                    <i class="fa fa-download"></i>
+                    SELECIONE UMA FOTO
+                </label>
+                <input id='input-file' name="foto" type='file' onchange="readURL(this);" />
+                <span id='file-name'></span>
             </div>
     </div>
     <div class="box-footer">
