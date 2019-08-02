@@ -19,20 +19,19 @@ Route::group(['middleware'=>['auth']], function (){
         Route::post('{id}/update', 'UsersController@update')->name('users.update');
         Route::get('{id}/perfil', 'UsersController@perfil')->name('users.perfil');
         Route::post('{id}/update-perfil', 'UsersController@updatePerfil')->name('users.update-perfil');
-        Route::post('destroy', 'UsersController@destroy')->name('users.destroy');
+        Route::post('{id}/destroy', 'UsersController@destroy')->name('users.destroy');
     });
 
     Route::group(['prefix' => 'ata'], function () {
         Route::resource('/', 'AtaController@index');
-        // Route::get('/', 'AtaController@index')->name('ata.index');
-        // Route::get('index', 'AtaController@index')->name('ata.index');
-        // Route::get('{id}/show', 'AtaController@show')->name('ata.show');
-        // Route::get('create', 'AtaController@create')->name('ata.create');
-        // Route::post('store', 'AtaController@store')->name('ata.store');
-        // Route::get('{id}/edit', 'AtaController@edit')->name('ata.edit');
-        // Route::post('{id}/update', 'AtaController@update')->name('ata.update');
-        // Route::post('{id}/destroy', 'AtaController@destroy')->name('ata.destroy');
-        Route::post('/mult-upload', 'AtaController@multUpload')->name('ata.mult-upload');
+        Route::get('/', 'AtaController@index')->name('ata.index');
+        Route::get('index', 'AtaController@index')->name('ata.index');
+        Route::get('{id}/show', 'AtaController@show')->name('ata.show');
+        Route::get('create', 'AtaController@create')->name('ata.create');
+        Route::post('store', 'AtaController@store')->name('ata.store');
+        Route::get('{id}/edit', 'AtaController@edit')->name('ata.edit');
+        Route::post('{id}/update', 'AtaController@update')->name('ata.update');
+        Route::post('{id}/destroy', 'AtaController@destroy')->name('ata.destroy');
     });
 
     Route::group(['prefix' => 'dizimos'], function () {
@@ -44,7 +43,6 @@ Route::group(['middleware'=>['auth']], function (){
         Route::get('{id}/edit', 'DizimosController@edit')->name('dizimos.edit');
         Route::post('{id}/update', 'DizimosController@update')->name('dizimos.update');
         Route::post('{id}/destroy', 'DizimosController@destroy')->name('dizimos.destroy');
-        Route::post('/mult-upload', 'DizimosController@multUpload')->name('dizimos.mult-upload');
     });
     Route::group(['prefix' => 'ofertas'], function () {
         Route::get('/', 'OfertasController@index')->name('ofertas.index');
@@ -66,7 +64,6 @@ Route::group(['middleware'=>['auth']], function (){
         Route::get('{id}/edit', 'RolesController@edit')->name('roles.edit');
         Route::post('{id}/update', 'RolesController@update')->name('roles.update');
         Route::post('{id}/destroy', 'RolesController@destroy')->name('roles.destroy');
-        Route::get('{id}/buscaCidade', 'RolesController@buscaCidade');
     });
     
     Route::group(['prefix' => 'permissions'], function () {
@@ -78,6 +75,5 @@ Route::group(['middleware'=>['auth']], function (){
         Route::get('{id}/edit', 'PermissionsController@edit')->name('permissions.edit');
         Route::post('{id}/update', 'PermissionsController@update')->name('permissions.update');
         Route::post('{id}/destroy', 'PermissionsController@destroy')->name('permissions.destroy');
-        Route::get('{id}/buscaCidade', 'PermissionsController@buscaCidade');
     });
 });

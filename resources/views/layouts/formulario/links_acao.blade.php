@@ -1,14 +1,14 @@
 <div class="text-center tools">
-    <form action="{{ route( "$control.destroy", $list->id) }}" method="POST">
+    <form action="{{ route( "$control.destroy", $list->id) }}" method="POST" id="formDelete">
         @csrf
-        <a href="{{ route("$control.show", $list->id) }}" class="btn btn-success btn-social-icon">
-            <i class="fa fa-eye"></i>
+        <a href="{{ route("$control.show", $list->id) }}" class="btn-social-icon btn-bitbucket btn bg-aqua-active">
+            <i class="fa fa-file"></i>
         </a>
-        <a href="{{ route("$control.edit", $list->id) }}" class="btn btn-warning btn-social-icon">
+        <a href="{{ route("$control.edit", $list->id) }}" class="btn-social-icon btn-bitbucket btn bg-orange-active">
             <i class="fa fa-edit"></i>
         </a>
-        <button class="btn btn-danger btn-social-icon">
+        <a href="javascript:{0}"  onclick="document.getElementById('formDelete').submit(); return false;" class="btn-social-icon btn-bitbucket btn bg-red-active">
             <i class="fa fa-trash"></i>
-        </button>
+        </a>
     </form>
 </div>
