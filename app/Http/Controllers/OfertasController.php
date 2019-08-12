@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Ofertas;
-use App\User;
+use App\Models\Ofertas;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OfertasController extends Controller

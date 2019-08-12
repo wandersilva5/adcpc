@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Dizimos;
-use App\User;
+use App\Models\Dizimos;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DizimosController extends Controller
@@ -11,7 +11,7 @@ class DizimosController extends Controller
 
     public function index(Dizimos $dizimos, User $user)
     {
-        $list_dizimos = $dizimos->where('created_at','<' ,'CURDATE()')->orderBy('id', 'DESC')->get();
+        $list_dizimos = $dizimos->where('created_at',now())->orderBy('id', 'DESC')->get();
         // dd($list_dizimos);
         $list_user = $user->pluck('name', 'id');
         $lista = $dizimos->tipoOferta;
