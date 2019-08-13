@@ -17,4 +17,9 @@ class Ofertas extends Model
         'Ofertas do Culto de Terça',
         'Ofertass Alçada',
     ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
 }

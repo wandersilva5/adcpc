@@ -11,7 +11,8 @@ class OfertasController extends Controller
 
     public function index(Ofertas $ofertas, User $user)
     {
-        $list_ofertas = $ofertas->where('created_at','<' ,'CURDATE()')->orderBy('id', 'DESC')->get();
+        $list_ofertas = $ofertas->whereDate('created_at', date("Y-m-d"))
+        ->orderBy('id', 'DESC')->get();
         $lista = $ofertas->tipoOferta;
         return view('ofertas.index', compact('list_ofertas' ,'lista'));
     }
@@ -29,7 +30,7 @@ class OfertasController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Ofertas $ofertas, $id)
     {
         $destroy = $ofertas->where('id', $id)->delete();
         if($destroy){
