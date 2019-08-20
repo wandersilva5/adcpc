@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 
 @section('titulo-pag')
-Dízimos e Ofertas
+Dízimos
 @section('sub-titulo')
 Lançamentos
 @endsection
@@ -10,7 +10,7 @@ Lançamentos
 @section('content')
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">Lista de Lançamentos Mensal</h3>
+        <h3 class="box-title">Lista de Lançamentos dos Dizimos</h3>
 
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
