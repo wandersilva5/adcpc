@@ -30,6 +30,11 @@ Lançamentos
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold; color:green; font-size: 18px">
+                            Total R$ {{ $somaOferta ?? '0'}},00
+                        </td>
+                    </tr>
+                    <tr>
                         <td style="width: 90%">Tipo da Oferta</td>
                         <td style="width: 20%">Valor R$</td>
                         <td style="width: 10%">Ação</td>

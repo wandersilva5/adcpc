@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Historics;
 
 class Ofertas extends Model
 {
@@ -12,14 +13,20 @@ class Ofertas extends Model
     ];
 
     public $tipoOferta = [
-        'Ofertas da Escola Biblica Dominical',
-        'Ofertas do Culto de Domingo',
-        'Ofertas do Culto de Terça',
-        'Ofertass Alçada',
+        'OFERTAS DA ESCOLA BIBLICA DOMINICAL',
+        'OFERTAS DO CULTO DE DOMINGO',
+        'OFERTAS DO CULTO DE TERÇA',
+        'OFERTA ALÇADA',
     ];
 
     protected $dates = [
         'created_at',
         'updated_at',
     ];
+
+    public function historics()
+    {
+        return $this->hasMany(Historics::class, 'id_tipo');
+    }
+
 }

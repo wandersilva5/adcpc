@@ -8,6 +8,8 @@ Route::get('/', function () {
 
 Route::group(['middleware'=>['auth']], function (){
     Route::get('/home', 'HomeController@index')->name('home');
+    
+    
 
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', 'UsersController@index')->name('users.index');
@@ -44,6 +46,7 @@ Route::group(['middleware'=>['auth']], function (){
         Route::post('{id}/update', 'DizimosController@update')->name('dizimos.update');
         Route::post('{id}/destroy', 'DizimosController@destroy')->name('dizimos.destroy');
     });
+
     Route::group(['prefix' => 'ofertas'], function () {
         Route::get('/', 'OfertasController@index')->name('ofertas.index');
         Route::get('index', 'OfertasController@index')->name('ofertas.index');
@@ -75,5 +78,11 @@ Route::group(['middleware'=>['auth']], function (){
         Route::get('{id}/edit', 'PermissionsController@edit')->name('permissions.edit');
         Route::post('{id}/update', 'PermissionsController@update')->name('permissions.update');
         Route::post('{id}/destroy', 'PermissionsController@destroy')->name('permissions.destroy');
+    });
+
+    Route::group(['prefix' => 'historics'], function () {
+        Route::get('/', 'HistoricsController@index')->name('historics.index');
+        Route::get('index', 'HistoricsController@index')->name('historics.index');
+        Route::get('busca', 'HistoricsController@busca')->name('historics.busca');
     });
 });

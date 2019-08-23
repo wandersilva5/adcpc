@@ -27,8 +27,13 @@ Lançamentos
         </form>
         <!-- /.box-body -->
         <div class="box-footer">
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered">
                 <thead>
+                    <tr>
+                        <td colspan="3" style="text-align: right; font-weight: bold; color:green; font-size: 18px">
+                            Total R$ {{ $somaDizimo ?? '0'}},00
+                        </td>
+                    </tr>
                     <tr>
                         <td style="width: 90%">Nome do Dizimista</td>
                         <td style="width: 20%">Valor R$</td>

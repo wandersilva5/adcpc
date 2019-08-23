@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Historics;
 
 class Dizimos extends Model
 {
@@ -15,5 +16,10 @@ class Dizimos extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function historics()
+    {
+        return $this->belongsTo(Historics::class, 'id_tipo');
+    }
 
 }

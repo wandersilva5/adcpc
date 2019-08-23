@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Ofertas;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class OfertasController extends Controller
 {
@@ -14,7 +15,14 @@ class OfertasController extends Controller
         $list_ofertas = $ofertas->whereDate('created_at', date("Y-m-d"))
         ->orderBy('id', 'DESC')->get();
         $lista = $ofertas->tipoOferta;
-        return view('ofertas.index', compact('list_ofertas' ,'lista'));
+
+        $data = $ofertas->select('valor', DB::raw('SUM(valor) as valor'))
+        ->whereDate('created_at', date("Y-m-d"))
+        ->groupBy('valor')
+        ->get();
+        $somaOferta = $data->sum('valor');
+
+        return view('ofertas.index', compact('list_ofertas' ,'lista', 'somaOferta'));
     }
 
 
@@ -22,7 +30,16 @@ class OfertasController extends Controller
     {
         $data = $request->all();
         $salvar = $ofertas->create($data);
-        if($salvar){
+
+        $historics = $dizimos->historics()->create([
+            'user_id'           => Auth::user()->id, 
+            'origem'            => 'OFERTA', 
+            'tipo_movimentacao' => 'ENTRADA', 
+            'data'              => date('Y-m-d'),
+            'id_tipo'           => $salvar->id
+        ]);
+
+        if($salvar && $historics){
             return redirect()->route('ofertas.index')->with('success', 'Oferta salvo com sucesso!!');
         }else{
             return redirect()->back()->with('error', 'Aconteceu um erro! Tente novamente, caso o erro persistir, informe o administrador.');
