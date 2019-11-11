@@ -9,7 +9,7 @@ class Ofertas extends Model
 {
 
     protected $fillable = [
-        'descricao', 'valor', 'tipo_oferta_id'
+        'descricao', 'valor', 'user_id'
     ];
 
     public $tipoOferta = [

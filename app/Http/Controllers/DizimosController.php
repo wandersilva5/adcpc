@@ -41,7 +41,6 @@ class DizimosController extends Controller
             'origem'            => 'DIZIMO', 
             'tipo_movimentacao' => 'ENTRADA', 
             'data'              => date('Y-m-d'),
-            'id_tipo'           => $salvar->id
         ]);
             
         if($salvar && $historics){

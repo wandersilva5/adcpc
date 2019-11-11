@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Ofertas;
 use App\Models\User;
+use Auth;
 
 class OfertasController extends Controller
 {
@@ -31,12 +32,11 @@ class OfertasController extends Controller
         $data = $request->all();
         $salvar = $ofertas->create($data);
 
-        $historics = $dizimos->historics()->create([
+        $historics = $ofertas->historics()->create([
             'user_id'           => Auth::user()->id, 
             'origem'            => 'OFERTA', 
             'tipo_movimentacao' => 'ENTRADA', 
             'data'              => date('Y-m-d'),
-            'id_tipo'           => $salvar->id
         ]);
 
         if($salvar && $historics){

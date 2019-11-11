@@ -22,7 +22,7 @@ Lançamentos
             @csrf
             @include('layouts.formulario.select', ['label'=>'Nome do Dizimista', 'for_name'=>'descricao', 'lista'=>$list_user,'col'=>'9'])
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control decimais','col'=>'3'])
-            @include('layouts.formulario.input', ['type'=>'hidden','for_name'=>'user_id', 'id'=>'userID'])
+            @include('layouts.formulario.input', ['type'=>'hidden','for_name'=>'user_id', 'id'=>'userID', 'value'=>auth()->user()->id])
             
         </form>
         <!-- /.box-body -->

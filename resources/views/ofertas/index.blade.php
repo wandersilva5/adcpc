@@ -22,8 +22,7 @@ Lançamentos
             @csrf
             @include('layouts.formulario.select', ['label'=>'Tipo da Oferta', 'for_name'=>'descricao', 'lista'=>$lista,'col'=>'9'])
             @include('layouts.formulario.input', ['type'=>'text','label'=>'Valor R$', 'for_name'=>'valor', 'class'=>'form-control decimais','col'=>'3'])
-            @include('layouts.formulario.input', ['type'=>'hidden','for_name'=>'tipo_oferta_id', 'id'=>'userID'])
-            
+            @include('layouts.formulario.input', ['type'=>'hidden','for_name'=>'user_id', 'value'=>auth()->user()->id])            
         </form>
         <!-- /.box-body -->
         <div class="box-footer">
