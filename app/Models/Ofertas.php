@@ -26,7 +26,7 @@ class Ofertas extends Model
 
     public function historics()
     {
-        return $this->hasMany(Historics::class, 'id_tipo');
+        return $this->hasMany(Historics::class, 'id');
     }
 
 }

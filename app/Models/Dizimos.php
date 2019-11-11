@@ -19,7 +19,7 @@ class Dizimos extends Model
 
     public function historics()
     {
-        return $this->belongsTo(Historics::class, 'id_tipo');
+        return $this->belongsTo(Historics::class, 'id');
     }
 
 }
