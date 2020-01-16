@@ -41,9 +41,33 @@
                     <i class="fa fa-circle-o"></i> Ofertas
                   </a>
                 </li>
+                <li>
+                  <a href="{{ route('historics.index') }}">
+                    <i class="fa fa-circle-o"></i> Histórico de lançamento
+                  </a>
+                </li>
               </ul>
             </li>
-            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Saídas</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="{{ route('dizimos.index') }}">
+                    <i class="fa fa-circle-o"></i> Lançar Saídas
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('historics.index') }}">
+                    <i class="fa fa-circle-o"></i> Histórico de Saídas
+                  </a>
+                </li>
+              </ul>
+            </li>
             {{-- <li>
               <a href="#">
                 <i class="fa fa-envelope"></i> <span>Mailbox</span>
